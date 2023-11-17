@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    HanderMapping-->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+
+<!--    HanderAdapter-->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+
+<!--    ViewResolver-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
+<!--        prefix-->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+<!--        suffix-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+<!--    BeanNameUrlHandlerMapping-->
+    <bean id="/hello" class="com.davis.controller.HelloController"/>
+
+
+</beans>
